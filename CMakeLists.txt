@@ -3,6 +3,7 @@ project(HW_1)
 
 set(CMAKE_CXX_STANDARD 17)
 
+#TDOD: change this path to relative path
 include_directories(
         /usr/local/Cellar/openblas/0.3.5/include
 )
@@ -22,3 +23,8 @@ message(STATUS "GLM: SSE4.2 instruction set")
 
 
 add_executable(HW_1 main.cpp Task1.h Task1.cpp Task2.h Task2.cpp Task3.h Task3.cpp)
+
+
+target_link_libraries(
+        ${PROJECT_NAME}
+        -lblas)

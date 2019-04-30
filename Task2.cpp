@@ -6,6 +6,7 @@
 #include <iostream>
 #include <chrono>
 #include <random>
+#include <cblas.h>
 
 
 
@@ -124,4 +125,12 @@ void task2()
     end = std::chrono::steady_clock::now();
     time_micros_sec = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
     std::cout<<"Task2: copied mul_square_matrices function time: "<<time_micros_sec<<" µs"<<std::endl;
+
+
+    start = std::chrono::steady_clock::now();
+    cblas_sgemv(CblasRowMajor, CblasNoTrans, 100, 100, 0.5f, (float*) A, 100, (float*)B, 100, 1.0f, (float*)C, 100);
+    end = std::chrono::steady_clock::now();
+    time_micros_sec = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    std::cout<<"Task2: blas mul function time: "<<time_micros_sec<<" µs"<<std::endl;
+
 }
