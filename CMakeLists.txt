@@ -21,4 +21,4 @@ message(STATUS "GLM: SSE4.2 instruction set")
 
 
 
-add_executable(HW_1 main.cpp Task1.h Task1.cpp Task2.h Task2.cpp)
+add_executable(HW_1 main.cpp Task1.h Task1.cpp Task2.h Task2.cpp Task3.h Task3.cpp)
